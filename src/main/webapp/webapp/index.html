@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home</title>
+</head>
+<body>
+<h1>Niggas in the Paris</h1>
+<p th:text="${message}"></p>
+<!--/*@thymesVar id="user" type="com.amitkurud.backendcommon.domain.models.User"*/-->
+<form action="#" th:action="@{/}" th:object="${user}" method="post">
+  <input type="text" id="username" name="username" th:field="*{username}" />
+  <input type="text" id="password" name="password" th:field="*{password}" />
+  <input type="submit" value="submit"/>
+  
+</form>
+</body>
+</html>
