@@ -7,9 +7,9 @@ import javax.validation.constraints.NotEmpty
 
 @Entity
 @Table(name = "mst_user")
-class User(){
+class User {
   @Id
-  @GeneratedValue @Column(name = "id")
+  @GeneratedValue @Column(name = "user_id")
   var id: Long? = null
   @Column(name = "username",unique = true)
   @NotNull
@@ -23,5 +23,8 @@ class User(){
   var password: String = ""
   @Column(name = "is_approved")
   var isApproved: Boolean = false
+  @OneToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+  @JoinColumn
+  var userDetails: UserDetails? =null
 }
 

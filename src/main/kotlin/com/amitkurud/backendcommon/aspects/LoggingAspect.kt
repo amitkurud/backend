@@ -12,8 +12,8 @@ import java.util.*
 @Component
 class LoggingAspect {
 
-    private val log = LoggerFactory.getLogger(LoggingAspect::javaClass.javaClass)
-    @Pointcut("@annotation(org.springframework.stereotype.Repository)" +
+    private val logger = LoggerFactory.getLogger(LoggingAspect::javaClass.javaClass)
+    @Pointcut("this(org.springframework.data.repository.Repository)" +
             " || within(@org.springframework.stereotype.Service *)"
     //+" || within(@org.springframework.stereotype.Controller *)"
     )
@@ -47,10 +47,10 @@ class LoggingAspect {
     @Throws(Throwable::class)
     fun around(joinPoint: ProceedingJoinPoint): Any {
         println("Begin Logging")
-        log.info("Enter: {}.{}() with argument[s] = {}", joinPoint.signature.declaringTypeName,
+        logger.info("Enter: {}.{}() with argument[s] = {}", joinPoint.signature.declaringTypeName,
                 joinPoint.signature.name, Arrays.toString(joinPoint.args))
         val result = joinPoint.proceed()
-        log.info("Exit: {}.{}() with result = {}", joinPoint.signature.declaringTypeName,
+        logger.info("Exit: {}.{}() with result = {}", joinPoint.signature.declaringTypeName,
                 joinPoint.signature.name, result)
         println("End Logging")
         return result
