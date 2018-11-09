@@ -1,32 +1,47 @@
 package com.amitkurud.backendcommon.controllers
 
-import com.amitkurud.backendcommon.domain.models.User
+import com.amitkurud.backendcommon.aspects.TimeTrack
+import com.amitkurud.backendcommon.domain.dto.UserDTO
 import com.amitkurud.backendcommon.services.UserService
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
+import java.lang.Exception
+import java.util.*
 
 @Controller
 class HomeController(@Autowired var userService: UserService) {
+    var logger = LoggerFactory.getLogger(this.javaClass)!!
     @GetMapping("/")
-    //@TimeTrack
+    @TimeTrack
     fun home(model: Model): String {
         model.addAttribute("message", "रजिस्टर कर बे ")
-        model.addAttribute("user", User())
+        model.addAttribute("userDTO", UserDTO())
         return "index"
     }
 
     @PostMapping("/")
-    fun home(model: Model, @ModelAttribute user: User): String {
-        val returnResult =user.let { return@let userService.addUser(user) }
-        model.addAttribute("message",returnResult)
-        model.addAttribute("user", User())
-        return "index"
+    fun home(model: Model, @ModelAttribute userDTO: UserDTO): String {
+        var returnResult : String
+        try {
+            returnResult = userDTO.let {
+                userDTO.birthdate = Date()
+                return@let userService.addUser(userDTO)
+            }
+            model.addAttribute("message", returnResult)
+        } catch (e: Exception) {
+            logger.error("")
+            returnResult="Something went wrong"
+            model.addAttribute("message", returnResult)
+        } finally {
+            model.addAttribute("userDTO", UserDTO())
+            return "index"
+        }
     }
-
     @GetMapping("/register")
     fun getRegister(model: Model): String {
         return "redirect:/"

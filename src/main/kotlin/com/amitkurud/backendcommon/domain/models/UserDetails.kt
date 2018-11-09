@@ -41,8 +41,6 @@ class UserDetails {
     var phoneNumber = ""
     @Column
     @NotNull
-    @NotBlank
-    @NotEmpty
     var birthdate = Date()
     @Column
     @NotNull
