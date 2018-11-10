@@ -9,14 +9,14 @@
 <p th:text="${message}"></p>
 <!--/*@thymesVar id="userDTO" type="com.amitkurud.backendcommon.domain.dto.UserDTO"*/-->
 <form action="#" th:action="@{/}" th:object="${userDTO}" method="post">
-  <input type="text" id="username" name="username" th:field="*{username}" />
-  <input type="text" id="password" name="password" th:field="*{password}" />
-  <input type="text" id="firstName" name="firstName" th:field="*{firstName}" />
-  <input type="text" id="middleName" name="middleName" th:field="*{middleName}" />
-  <input type="text" id="lastName" name="lastName" th:field="*{lastName}" />
-  <input type="text" id="email" name="email" th:field="*{email}" />
-  <input type="text" id="phoneNumber" name="phoneNumber" th:field="*{phoneNumber}" />
-  <input type="text" id="country" name="country" th:field="*{country}" />
+  <input type="text" th:th:id="username" th:name="username" th:field="*{username}" />
+  <input type="text" th:id="password" th:name="password" th:field="*{password}" />
+  <input type="text" th:id="firstName" th:name="firstName" th:field="*{firstName}" />
+  <input type="text" th:id="middleName" th:name="middleName" th:field="*{middleName}" />
+  <input type="text" th:id="lastName" th:name="lastName" th:field="*{lastName}" />
+  <input type="text" th:id="email" th:name="email" th:field="*{email}" />
+  <input type="text" th:id="phoneNumber" th:name="phoneNumber" th:field="*{phoneNumber}" />
+  <input type="text" th:id="country" th:name="country" th:field="*{country}" />
   <input type="submit" value="submit"/>
 </form>
 </body>

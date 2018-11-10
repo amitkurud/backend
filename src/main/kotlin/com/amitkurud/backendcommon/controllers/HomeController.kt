@@ -26,7 +26,7 @@ class HomeController(@Autowired var userService: UserService) {
 
     @PostMapping("/")
     fun home(model: Model, @ModelAttribute userDTO: UserDTO): String {
-        var returnResult : String
+        var returnResult: String
         try {
             returnResult = userDTO.let {
                 userDTO.birthdate = Date()
@@ -35,13 +35,14 @@ class HomeController(@Autowired var userService: UserService) {
             model.addAttribute("message", returnResult)
         } catch (e: Exception) {
             logger.error("")
-            returnResult="Something went wrong"
+            returnResult = "Something went wrong"
             model.addAttribute("message", returnResult)
         } finally {
             model.addAttribute("userDTO", UserDTO())
             return "index"
         }
     }
+
     @GetMapping("/register")
     fun getRegister(model: Model): String {
         return "redirect:/"
