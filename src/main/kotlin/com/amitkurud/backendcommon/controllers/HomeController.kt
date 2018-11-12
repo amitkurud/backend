@@ -2,7 +2,7 @@ package com.amitkurud.backendcommon.controllers
 
 import com.amitkurud.backendcommon.aspects.TimeTrack
 import com.amitkurud.backendcommon.domain.dto.UserDTO
-import com.amitkurud.backendcommon.services.UserService
+import com.amitkurud.backendcommon.services.implementations.UserServiceImpl
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
@@ -14,7 +14,7 @@ import java.lang.Exception
 import java.util.*
 
 @Controller
-class HomeController(@Autowired var userService: UserService) {
+class HomeController(@Autowired var userServiceImpl: UserServiceImpl) {
     var logger = LoggerFactory.getLogger(this.javaClass)!!
     @GetMapping("/")
     @TimeTrack
@@ -30,7 +30,7 @@ class HomeController(@Autowired var userService: UserService) {
         try {
             returnResult = userDTO.let {
                 userDTO.birthdate = Date()
-                return@let userService.addUser(userDTO)
+                return@let userServiceImpl.addUser(userDTO)
             }
             model.addAttribute("message", returnResult)
         } catch (e: Exception) {
