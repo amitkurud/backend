@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 import java.lang.Exception
 import java.util.*
+import javax.validation.Valid
 
 @Controller
 class HomeController(@Autowired var userServiceImpl: UserServiceImpl) {
@@ -25,7 +26,7 @@ class HomeController(@Autowired var userServiceImpl: UserServiceImpl) {
     }
 
     @PostMapping("/")
-    fun home(model: Model, @ModelAttribute userDTO: UserDTO): String {
+    fun home(model: Model,@Valid @ModelAttribute userDTO: UserDTO): String {
         var returnResult: String
         try {
             returnResult = userDTO.let {
