@@ -1,13 +1,12 @@
 package com.amitkurud.backendcommon
 
 import org.slf4j.LoggerFactory
+import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.EnableAspectJAutoProxy
-import org.springframework.boot.CommandLineRunner
-import org.springframework.context.ApplicationContext
-import java.util.*
 
 
 @SpringBootApplication

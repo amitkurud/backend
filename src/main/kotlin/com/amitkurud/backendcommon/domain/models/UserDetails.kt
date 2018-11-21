@@ -1,7 +1,6 @@
 package com.amitkurud.backendcommon.domain.models
 
 import org.jetbrains.annotations.NotNull
-import org.springframework.data.jpa.domain.AbstractPersistable_.id
 import java.util.*
 import javax.persistence.*
 import javax.validation.constraints.NotBlank

@@ -30,7 +30,7 @@ class HomeController(@Autowired var userServiceImpl: UserServiceImpl) {
         var returnResult: String
         try {
             returnResult = userDTO.let {
-                userDTO.birthdate = Date()
+                userDTO.birthDate = Date()
                 return@let userServiceImpl.addUser(userDTO)
             }
             model.addAttribute("message", returnResult)

@@ -30,7 +30,7 @@ class UserMapper {
         user.userDetails!!.email = userDTO.email
         user.userDetails!!.country = userDTO.country
         user.userDetails!!.phoneNumber = userDTO.phoneNumber
-        user.userDetails!!.birthdate = userDTO.birthdate
+        user.userDetails!!.birthdate = userDTO.birthDate
         return user
     }
     fun userDTOsToUsers(userDTOs: List<UserDTO>): List<User?> {

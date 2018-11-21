@@ -14,7 +14,7 @@ class UserDTO {
         this.lastName = user.userDetails!!.lastName
         this.email = user.userDetails!!.email
         this.phoneNumber = user.userDetails!!.phoneNumber
-        this.birthdate = user.userDetails!!.birthdate
+        this.birthDate = user.userDetails!!.birthdate
         this.country = user.userDetails!!.country
     }
 
@@ -46,7 +46,7 @@ class UserDTO {
     @Future
     @DateTimeFormat(pattern="MM/dd/yyyy")
     @NotNull @Past
-    var birthdate = Date()
+    var birthDate = Date()
     @NotBlank
     @NotEmpty
     var country = ""
