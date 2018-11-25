@@ -1,5 +1,6 @@
 package com.amitkurud.backendcommon.services.implementations
 
+import com.amitkurud.backendcommon.aspects.errorhandling.UserNotFoundException
 import com.amitkurud.backendcommon.domain.dto.UserDTO
 import com.amitkurud.backendcommon.domain.mappers.UserMapper
 import com.amitkurud.backendcommon.domain.repository.UserRepository
@@ -14,6 +15,7 @@ import javax.transaction.Transactional
 @Service
 @Transactional
 class UserServiceImpl(@Autowired var userRepository: UserRepository, @Autowired var userMapper: UserMapper) : UserService {
+
     val log = LoggerFactory.getLogger(this.javaClass)!!
     override fun addUser(userDTO: UserDTO): String {
         log.debug("adding user with username : {} and email : {}", userDTO.username, userDTO.email)
@@ -32,5 +34,23 @@ class UserServiceImpl(@Autowired var userRepository: UserRepository, @Autowired 
                 }
             }
         }
+    }
+
+    @Throws(UserNotFoundException::class)
+    override fun findUser(username: String) = userRepository.findByUsername(username)
+
+    @Throws(UserNotFoundException::class)
+    override fun checkIfUserExists(username: String): Boolean {
+        var checkIfExists = false
+        try {
+            throw UserNotFoundException("Oppsies daisy ","Oppsies daisy","Oppsies daisy")
+            if (userRepository.findByUsername(username) !== null)
+                checkIfExists = true
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        } finally {
+            return checkIfExists
+        }
+
     }
 }

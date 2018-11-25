@@ -1,4 +1,4 @@
-package com.amitkurud.backendcommon.controllers.rest.errorhandling
+package com.amitkurud.backendcommon.aspects.errorhandling
 
 import java.util.*
 
