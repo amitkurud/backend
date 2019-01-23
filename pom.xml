@@ -186,7 +186,7 @@
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-servlets</artifactId>
-            <version>4.0.3</version>
+            <version>4.0.5</version>
         </dependency>
         <!--Faster Jackson Dependacy-->
         <dependency>
