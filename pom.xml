@@ -8,8 +8,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>backendcommon</name>
-    <description>Demo project for Spring Boot</description>
+    <name>BackendCommon</name>
+    <description>A Common Backend for spring boot applications</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -23,6 +23,23 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <kotlin.version>1.3.20</kotlin.version>
+        <guava.version>27.0-jre</guava.version>
+        <metrics-spring.version>3.1.3</metrics-spring.version>
+        <cache-api.version>1.1.0</cache-api.version>
+        <spring-cloud-stream.version>2.1.0.RELEASE</spring-cloud-stream.version>
+        <spring-cloud-stream-binder-kafka.version>2.1.0.RELEASE</spring-cloud-stream-binder-kafka.version>
+        <problem-spring-web.version>0.23.0</problem-spring-web.version>
+        <jackson-datatype-problem.version>0.22.0</jackson-datatype-problem.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <commons-io.version>2.6</commons-io.version>
+        <metrics-servlets.version>4.0.5</metrics-servlets.version>
+        <metrics.version>4.0.5</metrics.version>
+        <rxkotlin.version>2.3.0</rxkotlin.version>
+        <dubbo.version>2.6.5</dubbo.version>
+        <commons-codec.version>1.11</commons-codec.version>
+        <tink.version>1.2.2</tink.version>
+        <logstash-logback-encoder.version>5.3</logstash-logback-encoder.version>
+        <commons-lang3.version>3.8.1</commons-lang3.version>
     </properties>
 
 
@@ -126,67 +143,67 @@
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-            <version>5.3</version>
+            <version>${logstash-logback-encoder.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-context</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <version>${spring-cloud-stream.version}</version>
         </dependency>
         <!--google tink libray for encyption-->
         <dependency>
             <groupId>com.google.crypto.tink</groupId>
             <artifactId>tink</artifactId>
-            <version>1.2.2</version>
+            <version>${tink.version}</version>
         </dependency>
         <!-- Apache common codecs for the sha256-->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.11</version>
+            <version>${commons-codec.version}</version>
         </dependency>
         <!--Apache Dubbo Dependancy-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
-            <version>2.6.5</version>
+            <version>${dubbo.version}</version>
         </dependency>
         <!-- RxKotlin Dependancy-->
         <dependency>
             <groupId>io.reactivex.rxjava2</groupId>
             <artifactId>rxkotlin</artifactId>
-            <version>2.3.0</version>
+            <version>${rxkotlin.version}</version>
         </dependency>
         <!--Dropwizard Dependancy-->
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-core</artifactId>
-            <version>4.0.5</version>
+            <version>${metrics.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-annotation</artifactId>
-            <version>4.0.5</version>
+            <version>${metrics.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-json</artifactId>
-            <version>4.0.5</version>
+            <version>${metrics.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-jvm</artifactId>
-            <version>4.0.5</version>
+            <version>${metrics.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-servlet</artifactId>
-            <version>4.0.5</version>
+            <version>${metrics.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-servlets</artifactId>
-            <version>4.0.5</version>
+            <version>${metrics-servlets.version}</version>
         </dependency>
         <!--Faster Jackson Dependacy-->
         <dependency>
@@ -212,59 +229,63 @@
         <dependency>
             <groupId>com.ryantenney.metrics</groupId>
             <artifactId>metrics-spring</artifactId>
-            <version>3.1.3</version>
+            <version>${metrics-spring.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
-
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.6</version>
+            <version>${commons-io.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
+            <version>${commons-lang3.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.cache</groupId>
             <artifactId>cache-api</artifactId>
-            <version>1.1.0</version>
+            <version>${cache-api.version}</version>
         </dependency>
         <!-- Kafka support -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <version>${spring-cloud-stream.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream-binder-kafka</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <version>${spring-cloud-stream.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-stream-test-support</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <version>${spring-cloud-stream.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.zalando</groupId>
             <artifactId>problem-spring-web</artifactId>
-            <version>0.23.0</version>
+            <version>${problem-spring-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.zalando</groupId>
             <artifactId>jackson-datatype-problem</artifactId>
-            <version>0.22.0</version>
+            <version>${jackson-datatype-problem.version}</version>
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
-            <version>0.9.1</version>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
     </dependencies>

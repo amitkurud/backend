@@ -6,7 +6,6 @@ import com.amitkurud.backendcommon.domain.models.UserDetails
 import org.springframework.stereotype.Service
 import java.util.*
 
-@Service
 class UserMapper {
 
     fun userToUserDTO(user: User): UserDTO {
