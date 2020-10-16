@@ -37,7 +37,7 @@
         <rxkotlin.version>2.3.0</rxkotlin.version>
         <dubbo.version>2.6.5</dubbo.version>
         <commons-codec.version>1.11</commons-codec.version>
-        <tink.version>1.2.2</tink.version>
+        <tink.version>1.5.0</tink.version>
         <logstash-logback-encoder.version>5.3</logstash-logback-encoder.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
     </properties>
