@@ -31,7 +31,7 @@
         <problem-spring-web.version>0.23.0</problem-spring-web.version>
         <jackson-datatype-problem.version>0.22.0</jackson-datatype-problem.version>
         <jjwt.version>0.9.1</jjwt.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <metrics-servlets.version>4.0.5</metrics-servlets.version>
         <metrics.version>4.0.5</metrics.version>
         <rxkotlin.version>2.3.0</rxkotlin.version>
