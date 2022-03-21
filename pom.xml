@@ -35,7 +35,7 @@
         <metrics-servlets.version>4.0.5</metrics-servlets.version>
         <metrics.version>4.0.5</metrics.version>
         <rxkotlin.version>2.3.0</rxkotlin.version>
-        <dubbo.version>2.6.5</dubbo.version>
+        <dubbo.version>2.6.9</dubbo.version>
         <commons-codec.version>1.11</commons-codec.version>
         <tink.version>1.2.2</tink.version>
         <logstash-logback-encoder.version>5.3</logstash-logback-encoder.version>
